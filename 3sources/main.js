@@ -376,7 +376,7 @@ function swap(arr){
 //81
 function addd(numb){
 	var total=0
-	var x=numb.toString(" ")
+	var x=numb.toString()
 	for(var i=0;i<x.length;i++){
 		total=total+x[i]
 }
@@ -511,7 +511,7 @@ function countt(arr){
 	var num= 0
 	for(var i=0;i<arr.length;i++){
 		var subcount=0
-		for(var z=i;z<arr.length;z++){
+		for(var z=0;z<arr.length;z++){
 			
 			if(arr[i]===arr[z]){
 				subcount=subcount+1
@@ -524,3 +524,494 @@ function countt(arr){
 	}
 		return num
 }
+
+//98
+function rep(arr,numold,numnew){
+	for(var i=0;i<arr.length;i++){
+		if(arr[i]===numold){
+			arr[i]=numnew
+		}
+	}
+
+	 return arr
+	}
+
+
+//100
+function elementinbotharr(arr1,arr2){
+	debugger
+	for(var i=0;i<arr1.length;i++){
+		for(var z=0;z<arr2.length;z++){
+			if(arr1[i]===arr2[z]){
+				return true
+			}
+		
+		
+	    }
+    }
+    return false
+} 
+
+//103
+//function ex103(numb){
+  //  var acc=[]
+	//var x=numb.toString()
+	//var z=x.split("")
+	//var total=0
+	//for(var i=0;i<x.length;i++){
+	//	z.splice(i,1)
+      //  var subtotal=0
+        //for(var k=0; k<x.length;k++){
+        //	subtotal=subtotal+x[k]
+        
+          //    if(subtotal>total){
+         	//    total=subtotal
+         	  //    acc.push(z)
+              //}
+        // }
+    // }
+    // return acc
+ //}
+
+ //105
+
+
+function reduceToOneDigitIn(num) {
+let count = 0;
+
+while(num.toString().split('').length > 1) {
+num = num.toString().split('').reduce((accumulator, item) => {
+return accumulator + parseInt(item);
+},0);
+
+count++;
+}
+
+return num
+}
+
+function devide(numb1,numb2){
+	
+	
+	if(numb2===1){
+		return numb1
+	}
+	 else{
+	 	  while(numb1%numb2===0){
+	 	  	numb1=numb1/numb2
+	 	  }
+	 	  return numb1
+	 }
+	
+}
+
+//107
+
+function div1(arr){
+	for(var i=0;i<arr.length;i++){
+		for(var z=0;i<arr.length;z++){
+			if(i!==z){
+				if((arr[i]%arr[z]===0)||(arr[z]%arr[i]===0)){
+					console.log(arr[i])
+				}
+			}
+		}
+
+    }     
+}
+//115
+
+
+
+
+
+
+
+function is_diagonal_matrix(user_matrix) {
+    for (var i = 0; i < user_matrix.length; i++) {
+        for (var j = 0; j < user_matrix.length; j++) {
+            if (i !== j && user_matrix[i][j] !== 0) 
+              return false;
+        }
+    }
+    return true;
+}
+
+//117
+
+function idendity(matrix){
+	for(var i=0;i<matrix.length;i++){
+		for(var k=0;k<matrix.length;k++){
+			if((i!==k && matrix[i][k]!==0)||(i===k && matrix[i][k]!==1)){
+				return false
+			}
+        }
+    }
+    return true    	
+}
+
+//118
+function range(arr,numb){
+	for(var i=0;i<arr.length;i++){
+		if(arr[i]===numb){
+			return true
+		}
+	}
+		return false 
+	}
+
+
+function range1(num1,num2,numb){
+	max=num1
+	min=num2
+	if(max<num2){
+		max=num2
+		min=num1
+
+	}
+      if((numb>min)&&(numb<max)){
+      	return true
+      }
+      return false
+    }
+//119
+
+function increasing(num){
+	debugger
+	var x=num.toString()
+	var z=x.split("")
+	for(var i=0;i<z.length-1;z++){
+
+		if(parseInt(z[i])+1!==parseInt(z[i+1])){
+			return false
+		}
+	}
+	return true
+}
+
+//121
+
+function triangular(arr){
+	for(var i=0; i<arr.length;i++){
+		for(var z=0;z<arr.length;z++){
+			if(arr[i][z]!==0 && z>i){
+				return false
+			}
+		}
+	}
+		return true
+}
+
+//122
+function incredecri(arr){
+	for(var i=0;i<arr.length-1;i++){
+		for(var z=i+2;z<arr.length;z++){
+		if(((arr[i]<arr[i+1])&&(arr[z]<arr[z-1])) || ((arr[i]>arr[i+1])&&(arr[z]<arr[z-1]))){
+			return false
+		}
+
+		}
+	}
+	return true
+}
+
+//123
+
+function permutation(arr,n){
+	for(var i=0;i<arr.length;i++){
+		if(arr[i]>n){
+			return false
+		}
+	}
+	return true
+}
+
+
+
+//126
+
+function maxeven(arr){
+	var even=arr.filter((element)=>(element%2===0))
+		return Math.max(...even)
+}
+
+	
+
+
+//130
+
+function evendigits(num){
+	debugger
+	count=0
+	var x=num.toString()
+	var z=x.split("")
+	for( var i=0; i<z.length;i++){
+		if((parseInt(z[i]))%2===0){
+			count=count+1
+
+			
+		}
+	} 
+	return count
+}
+
+//124
+function nor(x,y){
+	
+	
+		if( x===false && y===false){
+			return true
+		}
+		return false
+
+	}
+//131
+function prefsum(arr){
+	var acc=[]
+	
+	var tot=0
+
+
+	for(var i=0; i<arr.length;i++){
+
+	
+		
+		if(i===0){
+			sub=arr[i]
+			tot=tot+sub
+			acc.push(tot)
+		}
+		else{
+			sub=tot
+			tot=sub+arr[i]
+			acc.push(tot)
+        }
+    }
+    return acc
+}
+
+function prefix_sums(arr) {
+  const new_arr = [];
+  for (let i = 0; i < arr.length; i++) {
+    new_arr[i] = 0;
+    for (let j = 0; j < i + 1; j++) {
+      new_arr[i] += arr[j];
+    }
+
+  }
+
+  return new_arr;
+}
+
+//134
+function change(str){
+	acc=""
+	var alpha=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+	for(var i =0;i<str.length;i++){
+		for(var z=alpha.length-1;z>=0;z--){
+		if(str[i]==="a"){
+			 acc=acc+"a"
+		}
+		else if(str[i]===alpha[z]){
+			acc=acc+alpha[alpha.length-1-z]
+
+		}
+	}
+
+    }
+
+    
+  return acc
+}
+
+function change_char(str1) {
+	var result = [];
+	for (var i = 0; i < str1.length; i++)
+    {
+		var char_order = str1.charCodeAt(i) - 'a'.charCodeAt(0),
+			change_char = 25 - char_order + 'a'.charCodeAt(0);
+		result.push(String.fromCharCode(change_char));
+	}
+	return result.join("");
+}
+
+//135
+
+function removeappmore1(str){
+	
+	var x=str.split("")
+	k=x.map(element=>element)
+	for( var i=0;i<k.length;i++){
+		
+		
+		count=0
+		for(var z=i+1;z<k.length;z++){
+			
+			if(x[i]===x[z]){
+				x.splice(z,1)
+				z--
+				
+				
+				count=count+1
+			}
+		}
+			 if(count>0){
+			 	x.splice(i,1)
+			 	i--
+
+			 
+			 
+		}
+
+	}
+	return x.join("")
+	}
+
+
+	function removeRepeatingChar(str) {
+let arr = str.split('');
+for (i = 0; i < arr.length; i++) {
+for (j = i + 1; j < arr.length; j++) {
+if (arr[i] === arr[j]) {
+for (k = 0; k < arr.length; k++) {
+str = str.replace(arr[j], '');
+} } } }
+return str;
+}		
+
+
+
+var removeappmore11 = function(str) {
+    var arr = str.split('');
+    for(var i = 0; i < arr.length; i++) {
+        //var test = false;
+        var count=0
+        for(var j = i + 1; j < arr.length; j++) {
+            if(arr[i] === arr[j]) {
+                arr.splice(j, 1);
+                j--;
+               // test = true;
+               count=count+1
+            }
+        }
+        if(count>0) {
+            arr.splice(i, 1);
+            i--;
+        }
+    }
+    return arr.join('');
+};
+
+
+
+//140
+function samedigit(num){
+	var z=num.toString().split("")
+	for(var i=0;i<z.length;i++){
+		for(var k=i+1;k<z.length;k++){
+			if(z[i]!==z[k]){
+				return false
+			}
+		}
+	}
+	return true
+}
+
+//141
+function sameelement(arr1,arr2){
+	count=0
+	for(var i=0;i<arr1.length;i++){
+		
+		for( var k=0;k<arr2.length;k++){
+			if((arr1[i]!==arr2[k])&&(i===k)){
+				count=count
+			}
+			else if((arr1[i]==arr2[k])&&(i===k)){
+				count=count+1
+			}
+
+			}
+		}
+
+		return count
+
+	}
+
+//143
+function sort1(arr){
+	acc=[]
+	for(var i=0;i<arr.length;i++){
+		max=arr[0].length
+		ind=0
+		val=arr[0]
+		for(var z=i+1;z<arr.length;z++){
+			if(max<arr[i].length){
+				max=arr[i].length
+				ind=i
+				val=arr[i]
+			}
+		    }
+			acc.push(val)
+			arr.splice(ind,1)
+			ind--
+			
+        
+		arr.length=arr.length-1
+
+
+	}
+	return acc
+}
+
+
+
+
+function max(arr){
+	max=arr[0]
+	for(var i=0; i<arr.length;i++){
+		if(max<arr[i]){
+			max=arr[i]
+		}
+	}
+		return max
+	}
+
+
+//144
+function re(str){
+
+   
+	var x=str.split("://")
+
+	
+	var z=x[1].split("/")
+
+	var w=z.unshift(x[0])
+
+	var t=z.join(" ")
+
+	return t
+	
+}
+	
+//145
+function som(num){
+	debugger
+	var tot=0
+	 var i=0
+	    
+		while(tot<=num){
+			
+			i++
+			tot=tot+i
+
+		
+	
+	}
+
+    return i-1
+
+	}
+	
+
+
