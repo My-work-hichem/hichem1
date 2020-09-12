@@ -1012,6 +1012,93 @@ function som(num){
     return i-1
 
 	}
+
+//146
+function square(x){
+	return x*x*x
+}
+
+function sumsquare(num){
+	var tot=0
+	var i=0
+    while(i<=num){
+    	tot=tot+square(i)
+    	i++
+    }
+
+    return tot
+}
+    
+
+//147
+function sumdig(str){
+	debugger
+	var x=str.split("")
+	total=0
+	for(var i=0;i<x.length;i++){
+		if(!isNaN(x[i])){
+			z=parseInt(x[i])
+			total=total+z
+		}
+
+		}
+		return total
+	}
+
+function sumdig1111(str){
+	var x=str.split("")
+	total=0
+	for(var i=0;i<x.length;i++){
+		if(/[0-9]/.test(x[i])){
+			z=parseInt(x[i])
+			total=total+z
+		}
+		    
+		}
+    
+    return total
+  }
+
+//148
+function sswitch(arr){
+	debugger
+	if(arr.length%2===0){
+		var half=(arr.length/2)
+	z=arr.slice(0,half)
+	k=arr.slice(half,arr.length)
+}
+	for(var i=0;i<z.length;i++){
+		k.push(z[i])
+
+
+	}
+	return k
+}
 	
 
+//150
+function adjacent(arr){
+	debugger
+	var acc=[]
+	if(arr.length%2!==0){
+		return false
+	}
+	else{
+		k=arr.map(element=>element)
+		for(var i=0;i<arr.length;i=i+2){
+			for(var z=i+1;z<i+2;z++){
+			
+				arr[z]=arr[z-1]
+			    
+             
+
+			}
+			arr[i]=k[i+1]
+		}
+	}
+
+
+		return arr
+      
+	}
 
