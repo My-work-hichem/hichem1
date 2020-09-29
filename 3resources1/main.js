@@ -1105,12 +1105,252 @@ function pair(arr){
 	return acc
 }
 
+//16
+function rev(obj){
+	var acc={}
+	for(var key in obj){
+		acc[(obj[key])]=key
+	}
+	return acc
+}
+
+function rev1(arr){
+	var acc=[]
+	for(var i=0;i<arr.length;i++){
+		acc1={}
+		for(var key in arr[i]){
+			acc1[arr[i][key]]=key
+			
+		}
+		acc.push(acc1)
+	}
+	return acc
+}
+
+//17
+function prop(obj,key){
+	return obj.hasOwnProperty(key)
+}
+
+//recursion
+
+//1
+function factorial(n){
+	var prod=1
+	 if(n===1){
+	 	return 1
+
+	 }
+	 
+  return	 n*factorial(n-1) 
+}
+
+//2
+function lar(a,b){
+	debugger
+	var acc1=[]
+	var acc2=[]
+
+	for(var i=1;i<=a;i++){
+		if(a%i===0){
+			acc1.push(i)
+		}
+	}
+	for(var z=1;z<=b;z++){
+		if(b%z===0){
+			acc2.push(z)
+		}
+	}
+	var arr=[]
+	for(var x=0;x<acc1.length;x++){
+		for(var y=0;y<acc2.length;y++){
+			if(acc2[y]===acc1[x]){
+				arr.push(acc2[y])
+			}
+		}
+	}
+	 arr.sort(function(a,b){return b-a})
+	 return arr[0]
+}   
+
+//function lar1(a,b){
+//	if(a===1 && b===1){
+//		return 1
+//	}
+
+//}
 
 
+var gcd = function(a, b) {
+	debugger
+	return b === 0 ? a : gcd( b, a % b )
+} 
+
+//3
+
+function range(a,b){
+	var acc=[]
+	if(a===b-2){
+		acc.push(a+1)
+	}
+    b=b-1
+	acc.push(b)
+    
+    return range(a,b)
+}
 
 
+var arr = [];
+function range1(x, y) {
+if (x + 1 == y)
+return arr;
+arr.push(++x);
+return range1(x, y);
+}
+
+var prod= 1
+function fac(n){
+	if(n===1){
+		return prod
+	}
+prod=prod*n
+n=n-1
+return fac(n)
+}
+
+var acc=[]
+var count=0
+function gcd1(x,y){
+	debugger
+
+	 var max=y
+	 if(y<x){
+	 	max=x
+	 }
+
+	 var i=max-count
+
+       
+	   if(i===1){
+		    acc.sort(function(a,b){return b-a})
+		     return acc[0]
+	        }
+	    
+	    if((x%i===0)&&(y%i===0)){
+	    	
+		acc.push(i)
+		count=count+1
+	    }
+		 
+	
+	    else{
+	    count=count+1
+	    }
 
 
+   return gcd1(x,y)
+}
+
+var acc=""
+function repStr(str,n){
+	if(n===0){
+		return acc
+	}
+
+	acc=acc+str
+
+	var n=n-1
+	return repStr(str,n)
+
+}
+
+//5
+
+var tot=1
+function exp(b,e){
+	if(e===0){
+		return tot
+	}
+	tot=tot*b
+	e=e-1
+	return exp(b,e)
+
+}
+
+//6
+
+var acc=[]
+var count=0
+function fib(n){
+
+	debugger
+	
+	if(n===0){
+		return acc
+	}
+	if( count===0){
+		acc.push(0)
+		n=n-1
+		count=count+1
+	}
+	if(count===1){
+		acc.push(1)
+		n=n-1
+		count=count+1
+	}
+	else{
+		acc.push(acc[acc.length-1]+acc[acc.length-2])
+		n=n-1
+		count=count+1
+	}
+
+	return fib(n)
+	
+}
+
+//7
+
+function even(n){
+	if(n===0){
+		return "even"
+	}
+	if(n===1){
+		return "odd"
+	}
+	n=n-2
+	return even(n)
+}
+
+//6
+function search(arr,n){
+	if(arr[0]===n){
+		return arr[0]
+	}
+	if(arr[arr.length-1]!==0){
+		return "not found"
+	}
+	arr.shift()
+	return search(arr,n)
+
+}
+
+//9 to do
+
+//regular exp
+
+//1
+function upper(str){
+	return /^[A-Z]/.test(str)
+}
+
+//2
+function credit(str){
+	return /\d{4}-\d{4}-\d{4}-\d{4}/.test(str)
+}
+
+//3
+
+     
 
 
 
