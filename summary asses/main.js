@@ -173,11 +173,124 @@ function flatten(arr){
 			acc.push(arr[i])
 		}
 		if(Array.isArray(arr[i])){
-			return flatten(arr[i])
+			 flatten(arr[i])
 		}
 	}
 	return acc
 }
+
+//underscore
+
+ function indexof(arr,n){
+ 	debugger
+ 	for(var i=0;i<arr.length;i++){
+ 		if(arr[i]===n){
+ 			return i
+ 		}
+ 		
+ 	}
+ 	return -1
+ }
+
+
+
+
+function zip(arr1,arr2){
+	var x=arr1.toString().split(",")
+	var z=arr2.toString().split(",")
+	for(var i=0;i<x.length;i++){
+		x[i]=parseInt(x[i])
+	}
+	for(var k=0;k<z.length;k++){
+		z[k]=parseInt(z[k])
+	}
+	var max=z
+	var min=x
+	if(x.length>z.length){
+		max=x
+		min=z
+	}
+	var acc=[]
+	for (var w=0;w<max.length;w++){
+		acc.push([max[w],min[w]])
+	}
+	return acc
+
+	}
+   
+    
+   var flatt=function(){
+   	debugger
+   	var acc1=[]
+   	function f(arr){
+   	
+   	for(var i=0;i<arr.length;i++){
+
+   		if(Array.isArray(arr[i])){
+   		 f(arr[i])
+   		}
+   		else{
+   			
+   			 acc1.push(arr[i])
+   		}
+   	}
+       return acc1
+   	}
+   	return f
+   }
+
+   
+
+
+
+   function zip1(arr1,arr2){
+   	debugger
+   	var acc=[]
+   	var f=flatt()
+   	var z=f(arr1)
+
+   	var f=flatt()
+   	var x=f(arr2)
+
+   	var max=z
+   	var min=x
+   	if(z.length<x.length){
+   		max=x
+   		min=z
+   	}
+   	for(var i=0;i<max.length;i++){
+   		acc.push([max[i],min[i]])
+
+
+   	}
+   	return acc
+   	}
+
+function makeFetchAndSet(){
+	var acc
+	function fetchAndSet(x){
+		if((acc===undefined)&&(x===undefined)){
+		
+			return "value not set"
+		}
+		if(x===undefined){
+			return acc
+		}
+		else{
+			return acc=x
+		}
+     
+	}
+	return fetchAndSet
+}
+   
+
+
+	
+	
+
+
+ 
 
 	
 	
